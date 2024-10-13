@@ -8,7 +8,7 @@ class Manufacturer(models.Model):
     country = models.CharField(max_length=255)
 
     def __str__(self) -> str:
-        return f"{self.name} {self.country}"
+        return self.name
 
 
 class Driver(AbstractUser):
@@ -18,7 +18,7 @@ class Driver(AbstractUser):
         ordering = ('username', )
 
     def __str__(self) -> str:
-        return f"{self.username} ({self.first_name} {self.last_name})"
+        return self.username
 
 
 class Car(models.Model):
@@ -34,4 +34,4 @@ class Car(models.Model):
     )
 
     def __str__(self) -> str:
-        return f"{self.model} {self.manufacturer}"
+        return self.manufacturer
